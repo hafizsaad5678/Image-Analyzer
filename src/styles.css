@@ -1,0 +1,177 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+}
+
+/*
+  Color palette:
+  Purple  #8e65ab  → primary
+  Cream   #ebedd4  → foreground / text
+  Gold    #d3ba83  → accent / warm
+  Pink    #dc94b0  → secondary
+  L-Pink  #e8c6de  → muted highlights
+*/
+
+:root {
+  --radius: 0.75rem;
+
+  /* Deep purple-tinted dark background */
+  --background: #1a1225;
+  --foreground: #ebedd4;
+
+  /* Glassmorphism card — translucent purple */
+  --card: rgba(142, 101, 171, 0.12);
+  --card-foreground: #ebedd4;
+
+  --popover: rgba(142, 101, 171, 0.18);
+  --popover-foreground: #ebedd4;
+
+  /* Primary — purple */
+  --primary: #8e65ab;
+  --primary-foreground: #1a1225;
+  --primary-glow: #b48fd4;
+
+  /* Secondary — pink */
+  --secondary: #dc94b0;
+  --secondary-foreground: #1a1225;
+
+  /* Muted — dark purple tint */
+  --muted: rgba(142, 101, 171, 0.15);
+  --muted-foreground: #c4b8cf;
+
+  /* Accent — gold */
+  --accent: #d3ba83;
+  --accent-foreground: #1a1225;
+
+  /* Destructive — warm red-pink */
+  --destructive: #e06b7a;
+  --destructive-foreground: #ebedd4;
+
+  /* Borders — glassy purple edge */
+  --border: rgba(142, 101, 171, 0.25);
+  --input: rgba(142, 101, 171, 0.20);
+  --ring: #8e65ab;
+
+  /* Gradients */
+  --gradient-hero: radial-gradient(ellipse at top left, rgba(142, 101, 171, 0.35), transparent 55%),
+                   radial-gradient(ellipse at bottom right, rgba(220, 148, 176, 0.25), transparent 55%),
+                   radial-gradient(ellipse at center, rgba(211, 186, 131, 0.10), transparent 70%);
+  --gradient-primary: linear-gradient(135deg, #8e65ab, #dc94b0);
+  --gradient-maroon: linear-gradient(135deg, #dc94b0, #d3ba83);
+  --gradient-card: linear-gradient(135deg, rgba(142, 101, 171, 0.15), rgba(220, 148, 176, 0.08));
+  --gradient-gold: linear-gradient(135deg, #d3ba83, #e8c6de);
+
+  /* Shadows */
+  --shadow-glow: 0 0 60px -10px rgba(142, 101, 171, 0.55),
+                 0 0 30px -5px rgba(220, 148, 176, 0.25);
+  --shadow-elegant: 0 20px 50px -20px rgba(26, 18, 37, 0.8),
+                    0 0 30px -10px rgba(142, 101, 171, 0.15);
+  --shadow-glass: 0 8px 32px rgba(26, 18, 37, 0.4),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image: var(--gradient-hero);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ─── Animated gradient mesh background ─── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(142, 101, 171, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(220, 148, 176, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(211, 186, 131, 0.08) 0%, transparent 60%);
+  animation: meshFloat 20s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes meshFloat {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
+    transform: scale(1);
+  }
+  100% {
+    background-position: 30% 20%, 70% 60%, 40% 70%;
+    transform: scale(1.05);
+  }
+}
+
+/* ─── Glass utility classes ─── */
+.glass-card {
+  background: rgba(142, 101, 171, 0.08);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(142, 101, 171, 0.18);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-card-strong {
+  background: rgba(142, 101, 171, 0.14);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid rgba(232, 198, 222, 0.15);
+  box-shadow: var(--shadow-glass);
+}
+
+/* ─── Glow pulse for primary elements ─── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(142, 101, 171, 0.3), 0 0 60px rgba(142, 101, 171, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(142, 101, 171, 0.5), 0 0 80px rgba(220, 148, 176, 0.15); }
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
