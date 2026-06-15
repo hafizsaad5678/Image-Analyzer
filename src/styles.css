@@ -58,12 +58,12 @@
   --popover-foreground: #ebedd4;
 
   /* Primary — purple */
-  --primary: #8e65ab;
+  --primary: #8a54b0;
   --primary-foreground: #1a1225;
   --primary-glow: #b48fd4;
 
   /* Secondary — pink */
-  --secondary: #dc94b0;
+  --secondary: #da7a9f;
   --secondary-foreground: #1a1225;
 
   /* Muted — dark purple tint */
@@ -85,8 +85,8 @@
 
   /* Gradients */
   --gradient-hero: radial-gradient(ellipse at top left, rgba(142, 101, 171, 0.35), transparent 55%),
-                   radial-gradient(ellipse at bottom right, rgba(220, 148, 176, 0.25), transparent 55%),
-                   radial-gradient(ellipse at center, rgba(211, 186, 131, 0.10), transparent 70%);
+    radial-gradient(ellipse at bottom right, rgba(220, 148, 176, 0.25), transparent 55%),
+    radial-gradient(ellipse at center, rgba(211, 186, 131, 0.10), transparent 70%);
   --gradient-primary: linear-gradient(135deg, #8e65ab, #dc94b0);
   --gradient-maroon: linear-gradient(135deg, #dc94b0, #d3ba83);
   --gradient-card: linear-gradient(135deg, rgba(142, 101, 171, 0.15), rgba(220, 148, 176, 0.08));
@@ -94,20 +94,22 @@
 
   /* Shadows */
   --shadow-glow: 0 0 60px -10px rgba(142, 101, 171, 0.55),
-                 0 0 30px -5px rgba(220, 148, 176, 0.25);
+    0 0 30px -5px rgba(220, 148, 176, 0.25);
   --shadow-elegant: 0 20px 50px -20px rgba(26, 18, 37, 0.8),
-                    0 0 30px -10px rgba(142, 101, 171, 0.15);
+    0 0 30px -10px rgba(142, 101, 171, 0.15);
   --shadow-glass: 0 8px 32px rgba(26, 18, 37, 0.4),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
   }
+
   html {
     color-scheme: dark;
   }
+
   body {
     background-color: var(--background);
     color: var(--color-foreground);
@@ -117,7 +119,11 @@
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -142,6 +148,7 @@ body::before {
     background-position: 0% 0%, 100% 100%, 50% 50%;
     transform: scale(1);
   }
+
   100% {
     background-position: 30% 20%, 70% 60%, 40% 70%;
     transform: scale(1.05);
@@ -167,11 +174,34 @@ body::before {
 
 /* ─── Glow pulse for primary elements ─── */
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(142, 101, 171, 0.3), 0 0 60px rgba(142, 101, 171, 0.1); }
-  50% { box-shadow: 0 0 30px rgba(142, 101, 171, 0.5), 0 0 80px rgba(220, 148, 176, 0.15); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(142, 101, 171, 0.3), 0 0 60px rgba(142, 101, 171, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(142, 101, 171, 0.5), 0 0 80px rgba(220, 148, 176, 0.15);
+  }
 }
 
 .glow-pulse {
   animation: glowPulse 3s ease-in-out infinite;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
