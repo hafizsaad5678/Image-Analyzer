@@ -115,21 +115,20 @@ function HomePage() {
         <section className="pt-16 pb-12 text-center">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs text-muted-foreground mb-6" style={{ background: 'rgba(142, 101, 171, 0.12)', backdropFilter: 'blur(12px)', border: '1px solid rgba(142, 101, 171, 0.2)' }}>
             <Sparkles className="h-3.5 w-3.5" style={{ color: '#d3ba83' }} />
-            Multimodal AI · Vision · OCR
+            Advanced Vision Intelligence
           </div>
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
-            Understand any{" "}
+            Decode any{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: "var(--gradient-primary)" }}
             >
-              screenshot
+              interface
             </span>{" "}
             instantly
           </h1>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Drop a screenshot of an error, dashboard, code, or website. Get a clear explanation,
-            extracted text, detected issues, and recommended next steps.
+            Upload a screenshot of any UI, code, or error log. ScreenSense AI will instantly extract text, diagnose visual issues, and provide actionable design & performance suggestions.
           </p>
           <div className="mt-8 flex flex-wrap gap-6 justify-center text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">
