@@ -8,7 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { ScanSearch } from "lucide-react";
+import { ScanSearch, Linkedin, Github, Briefcase, Globe } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportError } from "../lib/error-reporting";
@@ -78,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ScreenSense AI — Understand any screenshot instantly" },
+      { title: "InsightLens AI — Understand any screenshot instantly" },
       { name: "description", content: "Upload any screenshot and get AI-powered analysis, text extraction, issue detection, and smart suggestions." },
       { name: "author", content: "Hafiz Saad" },
-      { property: "og:title", content: "ScreenSense AI" },
+      { property: "og:title", content: "InsightLens AI" },
       { property: "og:description", content: "Upload any screenshot and get AI-powered analysis, text extraction, issue detection, and smart suggestions." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -133,7 +133,7 @@ function RootComponent() {
               >
                 <ScanSearch className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="font-display font-bold text-xl tracking-tight hidden sm:block" style={{ background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>ScreenSense AI</span>
+              <span className="font-display font-bold text-xl tracking-tight hidden sm:block" style={{ background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>InsightLens AI</span>
             </Link>
             <nav className="flex items-center gap-4 sm:gap-8">
               <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors [&.active]:text-accent">Home</Link>
@@ -143,7 +143,7 @@ function RootComponent() {
               <Link to="/terms" className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors [&.active]:text-accent">Terms And Conditions</Link>
 
             </nav>
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
               <a
                 href="https://hafizsaad.netlify.app/"
                 target="_blank"
@@ -151,6 +151,15 @@ function RootComponent() {
                 className="inline-flex h-9 items-center justify-center rounded-full border border-border bg-background/40 px-5 text-sm font-medium text-foreground backdrop-blur-sm transition-all hover:bg-accent hover:text-accent-foreground hover:border-accent"
               >
                 Portfolio
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hafiz-saad-8a3853395/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-9 items-center justify-center rounded-full border border-border bg-background/40 px-4 text-sm font-medium text-foreground backdrop-blur-sm transition-all hover:bg-accent hover:text-accent-foreground hover:border-accent gap-1.5"
+              >
+                <Linkedin className="h-4 w-4" />
+                <span>LinkedIn</span>
               </a>
             </div>
           </div>
@@ -165,24 +174,32 @@ function RootComponent() {
         <footer className="border-t border-border/40 mt-20" style={{ background: 'rgba(26, 18, 37, 0.4)' }}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-              <div className="col-span-1 md:col-span-2">
+              <div>
                 <div className="flex items-center gap-2.5 mb-4">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: 'var(--gradient-primary)' }}>
                     <ScanSearch className="h-4 w-4 text-primary-foreground" />
                   </div>
-                  <span className="font-display font-bold text-lg" style={{ background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>ScreenSense AI</span>
+                  <span className="font-display font-bold text-lg" style={{ background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>InsightLens AI</span>
                 </div>
-                <p className="text-sm text-muted-foreground max-w-xs mb-6 leading-relaxed">
+                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                   Empowering developers and designers with intelligent screenshot analysis, instant code generation, and UI critiques.
                 </p>
                 <div className="flex items-center gap-4">
-                  <a href="#" className="h-8 w-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all">
-                    <span className="sr-only">Twitter</span>
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>
+                  <a href="https://www.linkedin.com/in/hafiz-saad-8a3853395/" target="_blank" rel="noreferrer" className="h-8 w-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all">
+                    <span className="sr-only">LinkedIn</span>
+                    <Linkedin className="h-4 w-4" />
                   </a>
-                  <a href="#" className="h-8 w-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all">
+                  <a href="https://github.com/hafizsaad5678" target="_blank" rel="noreferrer" className="h-8 w-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all">
                     <span className="sr-only">GitHub</span>
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+                    <Github className="h-4 w-4" />
+                  </a>
+                  <a href="https://www.fiverr.com/saad_dev2" target="_blank" rel="noreferrer" className="h-8 w-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all">
+                    <span className="sr-only">Fiverr</span>
+                    <Briefcase className="h-4 w-4" />
+                  </a>
+                  <a href="https://hafizsaad.netlify.app/" target="_blank" rel="noreferrer" className="h-8 w-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all">
+                    <span className="sr-only">Portfolio</span>
+                    <Globe className="h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -192,6 +209,16 @@ function RootComponent() {
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li><Link to="/features" className="hover:text-accent transition-colors [&.active]:text-accent">Features</Link></li>
                   <li><Link to="/how-it-works" className="hover:text-accent transition-colors [&.active]:text-accent">How it Works</Link></li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-foreground mb-4">Contact</h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li><a href="https://www.fiverr.com/saad_dev2" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">Contact Me (Fiverr)</a></li>
+                  <li><a href="https://www.linkedin.com/in/hafiz-saad-8a3853395/" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">LinkedIn</a></li>
+                  <li><a href="https://github.com/hafizsaad5678" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">GitHub</a></li>
+                  <li><a href="https://hafizsaad.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">Portfolio</a></li>
                 </ul>
               </div>
 

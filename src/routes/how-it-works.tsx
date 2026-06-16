@@ -45,7 +45,7 @@ function HowItWorksPage() {
             <div className="absolute -left-[53px] top-1.5 h-10 w-10 rounded-full border border-border bg-background flex items-center justify-center font-display font-bold text-accent shadow-sm">
               {step.step}
             </div>
-            
+
             <div className="glass-card p-8 rounded-2xl border border-border/40 hover:border-primary/30 transition-all max-w-3xl">
               <div className="h-12 w-12 rounded-xl bg-background/50 flex items-center justify-center mb-6 border border-border/20">
                 {step.icon}
@@ -60,7 +60,7 @@ function HowItWorksPage() {
       <div className="glass-card-strong p-10 rounded-3xl border border-border/50 text-center max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold mb-4">Experience it in action</h2>
         <p className="text-muted-foreground mb-8">
-          Upload a screenshot of this page or any other tab you have open to see how ScreenSense AI breaks it down.
+          Upload a screenshot of this page or any other tab you have open to see how InsightLens AI breaks it down.
         </p>
         <Link to="/" hash="upload" className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-medium text-primary-foreground shadow transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(142,101,171,0.4)]">
           Launch Analyzer <ArrowRight className="ml-2 h-4 w-4" />

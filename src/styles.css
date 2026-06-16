@@ -39,7 +39,7 @@
   Purple  #8e65ab  → primary
   Cream   #ebedd4  → foreground / text
   Gold    #d3ba83  → accent / warm
-  Pink    #dc94b0  → secondary
+  Pink    #dc9b9b  → secondary
   L-Pink  #e8c6de  → muted highlights
 */
 
@@ -58,12 +58,12 @@
   --popover-foreground: #ebedd4;
 
   /* Primary — purple */
-  --primary: #8a54b0;
+  --primary: #4a002a;
   --primary-foreground: #1a1225;
-  --primary-glow: #b48fd4;
+  --primary-glow: #903f55;
 
   /* Secondary — pink */
-  --secondary: #da7a9f;
+  --secondary: #dc9b9b;
   --secondary-foreground: #1a1225;
 
   /* Muted — dark purple tint */
@@ -81,20 +81,20 @@
   /* Borders — glassy purple edge */
   --border: rgba(142, 101, 171, 0.25);
   --input: rgba(142, 101, 171, 0.20);
-  --ring: #8e65ab;
+  --ring: #ab658d;
 
   /* Gradients */
   --gradient-hero: radial-gradient(ellipse at top left, rgba(142, 101, 171, 0.35), transparent 55%),
-    radial-gradient(ellipse at bottom right, rgba(220, 148, 176, 0.25), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(220, 155, 155, 0.25), transparent 55%),
     radial-gradient(ellipse at center, rgba(211, 186, 131, 0.10), transparent 70%);
-  --gradient-primary: linear-gradient(135deg, #8e65ab, #dc94b0);
-  --gradient-maroon: linear-gradient(135deg, #dc94b0, #d3ba83);
-  --gradient-card: linear-gradient(135deg, rgba(142, 101, 171, 0.15), rgba(220, 148, 176, 0.08));
+  --gradient-primary: linear-gradient(135deg, #ab6589, #dc9b9b);
+  --gradient-maroon: linear-gradient(135deg, #dc9b9b, #d3ba83);
+  --gradient-card: linear-gradient(135deg, rgba(171, 101, 169, 0.15), rgba(220, 155, 155, 0.08));
   --gradient-gold: linear-gradient(135deg, #d3ba83, #e8c6de);
 
   /* Shadows */
   --shadow-glow: 0 0 60px -10px rgba(142, 101, 171, 0.55),
-    0 0 30px -5px rgba(220, 148, 176, 0.25);
+    0 0 30px -5px rgba(220, 155, 155, 0.25);
   --shadow-elegant: 0 20px 50px -20px rgba(26, 18, 37, 0.8),
     0 0 30px -10px rgba(142, 101, 171, 0.15);
   --shadow-glass: 0 8px 32px rgba(26, 18, 37, 0.4),
@@ -137,7 +137,7 @@ body::before {
   z-index: -1;
   background:
     radial-gradient(circle at 20% 20%, rgba(142, 101, 171, 0.18) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(220, 148, 176, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(220, 155, 155, 0.14) 0%, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(211, 186, 131, 0.08) 0%, transparent 60%);
   animation: meshFloat 20s ease-in-out infinite alternate;
   pointer-events: none;
@@ -181,7 +181,7 @@ body::before {
   }
 
   50% {
-    box-shadow: 0 0 30px rgba(142, 101, 171, 0.5), 0 0 80px rgba(220, 148, 176, 0.15);
+    box-shadow: 0 0 30px rgba(142, 101, 171, 0.5), 0 0 80px rgba(220, 155, 155, 0.15);
   }
 }
 

@@ -84,7 +84,7 @@ export function ScreenshotUploader({
               if (f) handleFile(f);
             }}
           />
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl group-hover:scale-110 transition-transform" style={{ background: 'linear-gradient(135deg, rgba(142, 101, 171, 0.3), rgba(220, 148, 176, 0.2))' }}>
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl group-hover:scale-110 transition-transform" style={{ background: 'linear-gradient(135deg, rgba(142, 101, 171, 0.3), rgba(220, 155, 155, 0.2))' }}>
             <Upload className="h-8 w-8" style={{ color: '#d3ba83' }} />
           </div>
           <h3 className="mt-6 text-xl font-semibold">Drop your screenshot here</h3>
@@ -106,7 +106,7 @@ export function ScreenshotUploader({
         >
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2 text-sm text-muted-foreground min-w-0">
-              <ImageIcon className="h-4 w-4 shrink-0" style={{ color: '#dc94b0' }} />
+              <ImageIcon className="h-4 w-4 shrink-0" style={{ color: '#dc9b9b' }} />
               <span className="truncate">{imageName}</span>
             </div>
             <Button

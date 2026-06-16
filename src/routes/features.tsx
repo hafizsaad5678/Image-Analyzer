@@ -36,7 +36,7 @@ function FeaturesPage() {
           Core <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-primary)" }}>Capabilities</span>
         </h1>
         <p className="text-lg text-muted-foreground">
-          ScreenSense AI leverages advanced vision intelligence models to decode, transcribe, and analyze any interface you throw at it.
+          InsightLens AI leverages advanced vision intelligence models to decode, transcribe, and analyze any interface you throw at it.
         </p>
       </div>
 
